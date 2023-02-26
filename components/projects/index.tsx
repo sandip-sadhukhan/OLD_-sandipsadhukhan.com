@@ -24,7 +24,7 @@ const Projects = () => {
           {data.projects.title}
         </Heading>
 
-        <SimpleGrid columns={3} gap={10}>
+        <SimpleGrid columns={{ base: 1, md: 3 }} gap={10}>
           {data.projects.cards.map((card, index) => (
             <GridItem key={index}>
               <ProjectCard {...card} />

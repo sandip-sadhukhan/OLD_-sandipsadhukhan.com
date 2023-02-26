@@ -11,7 +11,7 @@ import {
   Tooltip,
 } from "@chakra-ui/react";
 import React from "react";
-import { BsFillEnvelopeFill, BsGithub, BsLinkedin } from "react-icons/bs";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { FiMail } from "react-icons/fi";
 import { BiDownload } from "react-icons/bi";
 
@@ -27,18 +27,18 @@ const HeroSection = () => {
   const mailHoverBgColor = useColorModeValue("red.600", "red.300");
 
   return (
-    <VStack my={16} textAlign="center">
+    <VStack my={{ base: 10, md: 16 }} textAlign="center">
       <Heading
         as="h1"
         size="3xl"
-        fontSize="6xl"
+        fontSize={{ base: "3xl", md: "6xl" }}
         fontWeight={800}
         color={textColor}
         mb={3}
       >
         {data.heroSection.name}
       </Heading>
-      <Text fontSize="xl" fontWeight={400}>
+      <Text fontSize={{ base: "md", md: "xl" }} fontWeight={400}>
         <Highlight
           query={data.heroSection.firstParagraphHighlight}
           styles={{ px: "2", py: "1", rounded: "full", bg: "primary.50" }}
@@ -46,10 +46,15 @@ const HeroSection = () => {
           {data.heroSection.firstParagraph}
         </Highlight>
       </Text>
-      <Text fontSize="xl" fontWeight={400}>
+      <Text fontSize={{ base: "md", md: "xl" }} fontWeight={400}>
         {data.heroSection.secondParagraph}
       </Text>
-      <HStack py={5} justify="center" align="center" spacing={1}>
+      <HStack
+        py={5}
+        justify="center"
+        align="center"
+        spacing={{ base: 0, md: 1 }}
+      >
         <Tooltip label="Github" hasArrow>
           <Link href={data.heroSection.githubLink} isExternal>
             <IconButton
@@ -58,7 +63,7 @@ const HeroSection = () => {
               aria-label="Github Link"
               color="gray.500"
               _hover={{ color: githubHoverBgColor }}
-              fontSize="3xl"
+              fontSize={{ base: "2xl", md: "3xl" }}
             />
           </Link>
         </Tooltip>
@@ -70,7 +75,7 @@ const HeroSection = () => {
               aria-label="Linkedin Link"
               color="linkedin.500"
               _hover={{ color: linkedinHoverBgColor }}
-              fontSize="3xl"
+              fontSize={{ base: "2xl", md: "3xl" }}
             />
           </Link>
         </Tooltip>
@@ -82,7 +87,7 @@ const HeroSection = () => {
               aria-label="Mail Link"
               color="red.500"
               _hover={{ color: mailHoverBgColor }}
-              fontSize="3xl"
+              fontSize={{ base: "2xl", md: "3xl" }}
             />
           </Link>
         </Tooltip>
@@ -92,7 +97,11 @@ const HeroSection = () => {
             _hover={{ textDecor: "none" }}
             download
           >
-            <Button size="sm" mb={1} rightIcon={<BiDownload />}>
+            <Button
+              size={{ base: "xs", md: "sm" }}
+              mb={1}
+              rightIcon={<BiDownload />}
+            >
               Resume
             </Button>
           </Link>

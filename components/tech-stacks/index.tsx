@@ -25,14 +25,18 @@ const TechStacks = () => {
       <Heading
         as="h2"
         textTransform="uppercase"
-        size="lg"
+        size={{ base: "md", md: "lg" }}
         letterSpacing="wide"
         fontWeight={600}
-        mb={16}
+        mb={{ base: 10, md: 16 }}
       >
         {data.techStacks.title}
       </Heading>
-      <SimpleGrid columns={2} spacingX={10} spacingY={16}>
+      <SimpleGrid
+        columns={{ base: 1, md: 2 }}
+        spacingX={10}
+        spacingY={{ base: 10, md: 16 }}
+      >
         {data.techStacks.cards.map((card, index) => (
           <GridItem key={index}>
             <TechStackCard {...card} />
