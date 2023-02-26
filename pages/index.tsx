@@ -1,12 +1,13 @@
-import { Heading, Button } from "@chakra-ui/react";
+import Header from "@/components/header";
+import HeroSection from "@/components/hero-section";
+import { Heading, Button, Container } from "@chakra-ui/react";
 
 const Home = () => {
   return (
-    <>
-      <h1>Hello</h1>
-      <Heading>Hi</Heading>
-      <Button>Submit</Button>
-    </>
+    <Container maxW="container.xl">
+      <Header />
+      <HeroSection />
+    </Container>
   );
 };
 
