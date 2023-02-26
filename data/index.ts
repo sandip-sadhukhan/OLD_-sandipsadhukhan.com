@@ -1,6 +1,13 @@
 import iconMap from "./icons";
 
 const data = {
+  site: {
+    title: "Sandip Sadhukhan | Full Stack Web Developer",
+    description:
+      "My name is sandip sadhukhan and I am a full stack web developer. " +
+      "I love about leaning new things and creating projects.",
+    favicon: "/sandip-sadhukhan.jpg",
+  },
   header: {
     profilePicture: "/sandip-sadhukhan.jpg",
     avatarAltName: "Sandip Sadhukhan",
