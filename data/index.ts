@@ -120,6 +120,45 @@ const data = {
       },
     ],
   },
+  testimonials: {
+    title: "Here's what peoples say about me",
+    cards: [
+      {
+        body:
+          "It was a great working with Sandip in each and every aspect " +
+          "of web development part for our organization.He work's smartly, " +
+          "he's efficient, and always helping team mates. The best part is " +
+          "he was most punctual person in our Tutorify team.",
+        image: "/testimonials/imran.jpg",
+        name: "Imran Ali",
+        designation: "Director at Tutorify",
+      },
+      {
+        body:
+          "Sandip is very enthusiastic person. In addition to his ability to " +
+          "learn and explore, he has a solid command over full stack " +
+          "development. An excellent worker and learner, he is!",
+        image: "/testimonials/hayden.jpg",
+        name: "Hayden Cordeiro",
+        designation: "SDE at BrowserStack",
+      },
+      {
+        body:
+          "Sandip is one of the most dedicated professionals I've worked " +
+          "with. He is willing to put that extra help whenever you need it. " +
+          "His expertise as a full stack developer is innovative, and it " +
+          "helped our team come up with more efficient solutions on the " +
+          "project. His contribution is valuable to the side, and I highly " +
+          "recommend Sandip and would love to work with him again.",
+        image: "/testimonials/vedang.jpg",
+        name: "Vedang Matey",
+        designation: "Analyst at HDFC Bank",
+      },
+    ],
+  },
+  footer: {
+    text: "Sandip Sadhukhan",
+  },
 };
 
 export default data;
