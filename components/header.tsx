@@ -1,16 +1,13 @@
 import {
   Avatar,
-  Container,
-  Heading,
   HStack,
-  Icon,
   IconButton,
-  Image,
   Tooltip,
   useColorMode,
 } from "@chakra-ui/react";
 import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 import React from "react";
+import data from "@/data";
 
 const Header = () => {
   const { toggleColorMode, colorMode } = useColorMode();
@@ -18,8 +15,8 @@ const Header = () => {
   return (
     <HStack justify="space-between" align="center" py={4}>
       <Avatar
-        src="/sandip-sadhukhan.jpg"
-        name="Sandip Sadhukhan"
+        src={data.header.profilePicture}
+        name={data.header.avatarAltName}
         _hover={{ transform: "rotate(360deg)" }}
         transitionDuration="0.5s"
         borderWidth="medium"
@@ -28,7 +25,7 @@ const Header = () => {
         size="md"
         cursor="pointer"
       />
-      <Tooltip label="Toggle Theme">
+      <Tooltip label="Toggle Theme" hasArrow>
         <IconButton
           icon={
             colorMode === "light" ? (

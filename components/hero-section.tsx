@@ -9,9 +9,14 @@ import {
   Button,
   Link,
   Highlight,
+  Tooltip,
 } from "@chakra-ui/react";
 import React from "react";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { BsFillEnvelopeFill, BsGithub, BsLinkedin } from "react-icons/bs";
+import { FiMail } from "react-icons/fi";
+import { BiDownload } from "react-icons/bi";
+
+import data from "@/data";
 
 const HeroSection = () => {
   const textColor = useColorModeValue("gray.800", "gray.200");
@@ -20,6 +25,7 @@ const HeroSection = () => {
     "linkedin.700",
     "linkedin.300"
   );
+  const mailHoverBgColor = useColorModeValue("red.600", "red.300");
 
   return (
     <VStack my={16} textAlign="center">
@@ -31,45 +37,67 @@ const HeroSection = () => {
         color={textColor}
         mb={3}
       >
-        Sandip Sadhukhan
+        {data.heroSection.name}
       </Heading>
       <Text fontSize="xl" fontWeight={400}>
         <Highlight
-          query="Full stack web developer"
+          query={data.heroSection.firstParagraphHighlight}
           styles={{ px: "2", py: "1", rounded: "full", bg: "primary.50" }}
         >
-          Full stack web developer at Codeword Tech.
+          {data.heroSection.firstParagraph}
         </Highlight>
       </Text>
       <Text fontSize="xl" fontWeight={400}>
-        I make high performance ecommerce websites and Shopify apps.
+        {data.heroSection.secondParagraph}
       </Text>
       <HStack py={5} justify="center" align="center" spacing={1}>
-        <Link href="https://github.com/sandippakhanna" isExternal>
-          <IconButton
-            variant="link"
-            icon={<BsGithub />}
-            aria-label="Github Link"
-            color="gray.500"
-            _hover={{ color: githubHoverBgColor }}
-            fontSize="3xl"
-          />
-        </Link>
-        <Link href="https://www.linkedin.com/in/sandipsadhukhan" isExternal>
-          <IconButton
-            variant="link"
-            icon={<BsLinkedin />}
-            aria-label="Linkedin Link"
-            color="linkedin.500"
-            _hover={{ color: linkedinHoverBgColor }}
-            fontSize="3xl"
-          />
-        </Link>
-        <Link href="mailto:sandip.sendme@gmail.com" textDecor="none">
-          <Button size="sm" mb={1}>
-            Let&apos;s Chat
-          </Button>
-        </Link>
+        <Tooltip label="Github" hasArrow>
+          <Link href={data.heroSection.githubLink} isExternal>
+            <IconButton
+              variant="link"
+              icon={<BsGithub />}
+              aria-label="Github Link"
+              color="gray.500"
+              _hover={{ color: githubHoverBgColor }}
+              fontSize="3xl"
+            />
+          </Link>
+        </Tooltip>
+        <Tooltip label="Linkedin" hasArrow>
+          <Link href={data.heroSection.linkedinLink} isExternal>
+            <IconButton
+              variant="link"
+              icon={<BsLinkedin />}
+              aria-label="Linkedin Link"
+              color="linkedin.500"
+              _hover={{ color: linkedinHoverBgColor }}
+              fontSize="3xl"
+            />
+          </Link>
+        </Tooltip>
+        <Tooltip label="Mail" hasArrow>
+          <Link href={data.heroSection.mailLink} isExternal>
+            <IconButton
+              variant="link"
+              icon={<FiMail />}
+              aria-label="Mail Link"
+              color="red.500"
+              _hover={{ color: mailHoverBgColor }}
+              fontSize="3xl"
+            />
+          </Link>
+        </Tooltip>
+        <Tooltip label="Download Resume" hasArrow>
+          <Link
+            href={data.heroSection.resumeLink}
+            _hover={{ textDecor: "none" }}
+            download
+          >
+            <Button size="sm" mb={1} rightIcon={<BiDownload />}>
+              Resume
+            </Button>
+          </Link>
+        </Tooltip>
       </HStack>
     </VStack>
   );
