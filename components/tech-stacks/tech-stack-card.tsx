@@ -11,8 +11,8 @@ import React from "react";
 
 interface Props {
   icons: IconType[];
-  headings: String[];
-  body: String;
+  headings: string[];
+  body: string;
 }
 
 const TechStackCard: React.FC<Props> = ({ icons, headings, body }) => {
